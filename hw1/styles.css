@@ -1,0 +1,87 @@
+body {
+    background-image: linear-gradient(to right, rgb(54, 193, 218), rgb(168, 177, 85));
+}
+
+.container {
+    margin: auto;
+    width: 50vw;
+    text-align: center;
+    /* border: 1px solid white; */
+}
+
+.image-box input[type="radio"] {
+    width: 130px;
+    height: 80px;
+    display: inline-block;
+    outline: none;
+    border: 1px solid #555;
+    appearance: none;
+    cursor: pointer; /* when the mouse is on, the cursor shape will become pointer(can be pointed) */
+    box-shadow: 0 0 2px black;
+    transition: all 0.5s ease-in-out;
+}
+
+.image-box input[type="radio"]:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px black;
+}
+
+#img-01 {
+    background-image: url("images/Kobe1.jpeg");
+    background-size: cover;
+}
+#img-02 {
+    background-image: url("images/Kobe2.jpg");
+    background-size: cover;
+}
+#img-03 {
+    background-image: url("images/Kobe3.jpg");
+    background-size: cover;
+}
+#img-04 {
+    background-image: url("images/Kobe4.jpg");
+    background-size: cover;
+}
+#img-05 {
+    background-image: url("images/Kobe5.jpg");
+    background-size: cover;
+}
+
+.image-bg {
+    border-radius: 10px;
+    margin-top: 3vh;
+    width: 100%;
+    height: 60vh;
+    border: 1px solid black;
+    transition: all 0.5s ease-in-out;
+}
+
+.image-bg:hover {
+    transform: scale(1.008);
+    box-shadow: 0 0 3px black;
+}
+
+#img-01:checked ~ .image-bg {
+    background-image: url("images/Kobe1.jpeg");
+    background-size: cover;
+}
+
+#img-02:checked ~ .image-bg {
+    background-image: url("images/Kobe2.jpg");
+    background-size: cover;
+}
+
+#img-03:checked ~ .image-bg {
+    background-image: url("images/Kobe3.jpg");
+    background-size: cover;
+}
+
+#img-04:checked ~ .image-bg {
+    background-image: url("images/Kobe4.jpg");
+    background-size: cover;
+}
+
+#img-05:checked ~ .image-bg {
+    background-image: url("images/Kobe5.jpg");
+    background-size: cover;
+}
