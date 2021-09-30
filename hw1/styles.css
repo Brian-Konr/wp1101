@@ -6,9 +6,41 @@ body {
     margin: auto;
     width: 50vw;
     text-align: center;
-    /* border: 1px solid white; */
+    /* border: 2px solid white; */
 }
-
+.menu {
+    /* background-color: #555; */
+    margin-top: 7vh;
+    height: 6vh;
+    /* border: 2px solid #555; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 3px 3px 3px 4px rgb(48, 46, 46);
+}
+.menu h3 {
+    height: 100%;
+    background-color: rgb(128, 65, 65);
+    line-height: 5.8vh;
+    padding: 0 50px;
+    color:rgb(238, 142, 17);
+}
+.menu label {
+    display: inline-block;
+    height: 100%;
+    padding: 0 10px;
+    margin: 0 50px;
+    line-height: 5.8vh;
+    color: rgb(141, 106, 67);
+    cursor: pointer;
+    font-weight: bold;
+}
+.menu label:hover {
+    color:rgb(48, 46, 46);
+}
+.menu input[type="radio"] {
+    display: none;
+}
 .image-box input[type="radio"] {
     width: 130px;
     height: 80px;
@@ -53,12 +85,12 @@ body {
     width: 100%;
     height: 60vh;
     border: 1px solid black;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.7s ease-in-out;
 }
 
 .image-bg:hover {
-    transform: scale(1.008);
-    box-shadow: 0 0 3px black;
+    transform: perspective(1000px) rotateY(5deg);
+    box-shadow: 0 0 6px black;
 }
 
 #img-01:checked ~ .image-bg {
