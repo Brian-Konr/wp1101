@@ -1,122 +1,75 @@
 body {
-    background-image: linear-gradient(to right, rgb(54, 193, 218), rgb(168, 177, 85));
+    background-color: bisque;
 }
-
-.container {
-    margin: auto;
-    width: 50vw;
+h1 {
     text-align: center;
-    /* border: 2px solid white; */
+    color:rgb(223, 104, 24);
 }
-.menu {
-    /* background-color: #555; */
-    min-width: 600px;
-    width: 100%;
-    margin-top: 7vh;
-    height: 6vh;
-    /* border: 2px solid #555; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 3px 3px 3px 4px rgb(48, 46, 46);
+.navbar {
+    overflow: hidden;
+    background-color:rgb(255, 200, 132);
+    font-family: Arial;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
 }
-.menu h3 {
-    height: 100%;
-    background-color: rgb(128, 65, 65);
-    line-height: 5.8vh;
-    padding: 0 50px;
-    color:rgb(238, 142, 17);
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
-.menu label {
-    display: inline-block;
-    height: 100%;
-    padding: 0 2vw;
-    margin: 0 2vw;
-    line-height: 5.8vh;
-    color: rgb(141, 106, 67);
-    cursor: pointer;
-    font-weight: bold;
+.navbar a:hover {
+    background-color: rgb(161, 141, 76);
 }
-.menu label:hover {
-    color:rgb(48, 46, 46);
+/* The grid: Five equal columns that floats next to each other */
+.container {
+    width: 480px;
+    /* border: 1px solid black; */
+    text-align: center;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4vh;
 }
-.menu input[type="radio"] {
-    display: none;
-}
-.image-box input[type="radio"] {
-    width: 130px;
-    height: 80px;
-    display: inline-block;
-    outline: none;
-    border: 1px solid #555;
-    appearance: none;
-    cursor: pointer; /* when the mouse is on, the cursor shape will become pointer(can be pointed) */
-    box-shadow: 0 0 2px black;
-    transition: all 0.5s ease-in-out;
-}
-
-.image-box input[type="radio"]:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 5px black;
-}
-
-#img-01 {
-    background-image: url("images/Kobe1.jpeg");
-    background-size: cover;
-}
-#img-02 {
-    background-image: url("images/Kobe2.jpg");
-    background-size: cover;
-}
-#img-03 {
-    background-image: url("images/Kobe3.jpg");
-    background-size: cover;
-}
-#img-04 {
-    background-image: url("images/Kobe4.jpg");
-    background-size: cover;
-}
-#img-05 {
-    background-image: url("images/Kobe5.jpg");
-    background-size: cover;
-}
-
-.image-bg {
+.container img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
-    margin-top: 3vh;
     width: 100%;
-    min-width: 600px;
-    height: 60vh;
-    border: 1px solid black;
-    transition: all 0.7s ease-in-out;
+}
+.row {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    flex-wrap: wrap;
+}
+.column {
+    width: 16%;
+    padding-top: 10px;
+    padding: 4px;
 }
 
-.image-bg:hover {
-    transform: perspective(1000px) rotateY(5deg);
-    box-shadow: 0 0 6px black;
+.column img {
+    border-radius: 5px;
+    width: 100%;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: .5s ease-in-out;
 }
 
-#img-01:checked ~ .image-bg {
-    background-image: url("images/Kobe1.jpeg");
-    background-size: cover;
+.column img:hover {
+    transform: scale(1.1);
+    opacity: 1;
 }
 
-#img-02:checked ~ .image-bg {
-    background-image: url("images/Kobe2.jpg");
-    background-size: cover;
+@media screen and (max-width: 768px) {
+    .column {
+        width: 31.7%;
+    }
 }
-
-#img-03:checked ~ .image-bg {
-    background-image: url("images/Kobe3.jpg");
-    background-size: cover;
-}
-
-#img-04:checked ~ .image-bg {
-    background-image: url("images/Kobe4.jpg");
-    background-size: cover;
-}
-
-#img-05:checked ~ .image-bg {
-    background-image: url("images/Kobe5.jpg");
-    background-size: cover;
+@media screen and (max-width: 500px) {
+    .column {
+        width: 100%;
+    }
 }
