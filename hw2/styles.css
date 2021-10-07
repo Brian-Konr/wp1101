@@ -1,0 +1,75 @@
+body {
+    background-color: bisque;
+}
+h1 {
+    text-align: center;
+    color:rgb(223, 104, 24);
+}
+.navbar {
+    overflow: hidden;
+    background-color:rgb(255, 200, 132);
+    font-family: Arial;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,.2);
+}
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: rgb(161, 141, 76);
+}
+/* The grid: Five equal columns that floats next to each other */
+.container {
+    width: 480px;
+    /* border: 1px solid black; */
+    text-align: center;
+    margin-top: 4vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4vh;
+}
+.container img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    width: 100%;
+}
+.row {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    flex-wrap: wrap;
+}
+.column {
+    width: 16%;
+    padding-top: 10px;
+    padding: 4px;
+}
+
+.column img {
+    border-radius: 5px;
+    width: 100%;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.column img:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .column {
+        width: 31.7%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .column {
+        width: 100%;
+    }
+}
