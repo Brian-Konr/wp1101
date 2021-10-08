@@ -5,6 +5,7 @@ h1 {
     text-align: center;
     color:rgb(223, 104, 24);
 }
+
 .navbar {
     overflow: hidden;
     background-color:rgb(255, 200, 132);
@@ -23,6 +24,11 @@ h1 {
     cursor: pointer;
     background-color: rgb(161, 141, 76);
 }
+
+.menuChecked {
+    background-color: rgb(161, 141, 76);
+}
+
 .container {
     margin-top: 4vh;
     margin-bottom: 4vh;
@@ -108,6 +114,25 @@ h1 {
     cursor: not-allowed;
 }
 
+.card {
+    border-radius: 10px;
+    width: 320px;
+    background-color: rgb(240, 208, 144);
+}
+.card h4 {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.card #infoText1{
+    padding-top: 16px;
+}
+
+.card #infoText2{
+    padding-bottom: 16px;
+}
 @keyframes scaleAndReverse {
     0% {
         transform: scale(1.1);

@@ -7,6 +7,9 @@ const streetImgArr = [
     "https://images.unsplash.com/photo-1620888836251-0204241bef7b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHN0cmVldHxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
 ];
 const foodAndDrinkArr = [
+    "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZHxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1525351484163-7529414344d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZHxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1422748733255-ee572fddeab0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGZvb2QlMjAlMjYlMjBkcmlua3xlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1556804335-2fa563e93aae?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Zm9vZCUyMCUyNiUyMGRyaW5rfGVufDB8MnwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1535140728325-a4d3707eee61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGZvb2QlMjAlMjYlMjBkcmlua3xlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
@@ -22,19 +25,37 @@ const natureArr = [
     "https://images.unsplash.com/photo-1465188035480-cf3a60801ea5?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bmF0dXJlfGVufDB8MnwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     "https://images.unsplash.com/photo-1606318621597-c057f7d4926e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fG5hdHVyZXxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
 ]
-let currentIndex = 0;
-let currentArr = streetImgArr;
 
+let totalArr = [
+    streetImgArr,
+    foodAndDrinkArr,
+    natureArr
+]
+let currentArr = streetImgArr;
+let currentIndex = 0;
+
+displayTotalPic();
+
+function displayTotalPic() {
+    var i = 0;
+    var count = 0;
+    for(i = 0; i < totalArr.length; i++) {
+        count += totalArr[i].length;
+    }
+    document.getElementById("totalPic").innerHTML = `${count}`;
+}
 let displayBoxImg = document.getElementById("displayBoxImg"),
     prevButton = document.getElementById("prevButton"),
     nextButton = document.getElementById("nextButton"),
     rowElement = document.getElementsByClassName("row")[0],
-    thumbnails = document.getElementsByClassName("row")[0].children;
+    thumbnails = document.getElementsByClassName("row")[0].children,
+    currentAlbum = document.getElementById("street");
 
 renderPic(streetImgArr);
 
 function renderPic(arr) {
     currentArr = arr;
+    document.getElementById("albumPic").innerHTML = `${arr.length}`
     var i = 0;
     for(i = 0; i < arr.length; i++) {
         var newPic = document.createElement('div');
@@ -94,9 +115,11 @@ function disableCheck() {
 }
 
 function switchAlbum(album) {
+    currentAlbum.classList.remove("menuChecked");
     rowElement.innerHTML = '';
     var tempCur = currentIndex; //used when clicked the empty album, currentIndex shouldn't change
     currentIndex = 0;
+    if(album !== "empty") currentAlbum = document.getElementById(album);
     if(album === 'street') renderPic(streetImgArr);
     else if(album === 'food') renderPic(foodAndDrinkArr);
     else if(album === 'nature') renderPic(natureArr);
@@ -105,4 +128,5 @@ function switchAlbum(album) {
         currentIndex = tempCur;
         renderPic(currentArr);
     }
+    currentAlbum.classList.add("menuChecked")
 }
