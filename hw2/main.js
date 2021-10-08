@@ -32,7 +32,9 @@ let totalArr = [
     natureArr
 ]
 let currentArr = streetImgArr;
+
 let currentIndex = 0;
+document.getElementById("currentImgId").innerHTML = `${currentIndex}`;
 
 displayTotalPic();
 
@@ -51,7 +53,7 @@ let displayBoxImg = document.getElementById("displayBoxImg"),
     thumbnails = document.getElementsByClassName("row")[0].children,
     currentAlbum = document.getElementById("street");
 
-renderPic(streetImgArr);
+switchAlbum("street"); //initialize the first page to be streetImg
 
 function renderPic(arr) {
     currentArr = arr;
@@ -95,6 +97,7 @@ function next() {
 function setImg(index) {
     displayBoxImg.src = currentArr[index];
     thumbnails[index].classList.add("picked");
+    document.getElementById("currentImgId").innerHTML = `${index + 1}`;
     disableCheck();
 }
 
@@ -124,7 +127,7 @@ function switchAlbum(album) {
     else if(album === 'food') renderPic(foodAndDrinkArr);
     else if(album === 'nature') renderPic(natureArr);
     else {
-        alert("此相簿為空！");
+        alert("This album is Empty!!");
         currentIndex = tempCur;
         renderPic(currentArr);
     }
