@@ -20,34 +20,62 @@ h1 {
     text-decoration: none;
 }
 .navbar a:hover {
+    cursor: pointer;
     background-color: rgb(161, 141, 76);
 }
-/* The grid: Five equal columns that floats next to each other */
 .container {
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    /* border: 1px solid brown; */
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+/* The grid: Five equal columns that floats next to each other */
+.displayBox {
     width: 480px;
     /* border: 1px solid black; */
-    text-align: center;
+    /* text-align: center;
     margin-top: 4vh;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4vh;
+    margin-bottom: 4vh; */
 }
-.container img {
+.displayBox img {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 10px;
     width: 100%;
 }
+
+.displayBox_button {
+    /* border: 1px solid black; */
+    display: inline;
+    background: none;
+    /* border-radius: 25%; */
+}
+
+.displayBox_button img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
 .row {
     /* border: 1px solid red; */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     height: auto;
     flex-wrap: wrap;
+    /* overflow: auto; */
 }
 .column {
     width: 16%;
     padding-top: 10px;
-    padding: 4px;
+    padding: 2px;
 }
 
 .column img {
@@ -59,10 +87,35 @@ h1 {
 }
 
 .column img:hover {
-    transform: scale(1.1);
     opacity: 1;
+    transform: scale(1.04) ;
 }
 
+.disabled {
+    opacity: 0.2;
+}
+
+.picked {
+    opacity: 1;
+    border-style: groove;
+    border-color: rgb(248, 110, 85);
+    border-radius: 5px;
+    border-width: 6px;
+}
+
+.disabled:hover {
+    border-color: transparent !important;
+    cursor: not-allowed;
+}
+
+@keyframes scaleAndReverse {
+    0% {
+        transform: scale(1.1);
+    }
+    80% {
+        transform: scale(1.0);
+    }
+}
 @media screen and (max-width: 768px) {
     .column {
         width: 31.7%;
