@@ -95,12 +95,14 @@ function disableCheck() {
 
 function switchAlbum(album) {
     rowElement.innerHTML = '';
+    var tempCur = currentIndex; //used when clicked the empty album, currentIndex shouldn't change
     currentIndex = 0;
     if(album === 'street') renderPic(streetImgArr);
     else if(album === 'food') renderPic(foodAndDrinkArr);
     else if(album === 'nature') renderPic(natureArr);
     else {
-        alert("此相簿為空！")
+        alert("此相簿為空！");
+        currentIndex = tempCur;
         renderPic(currentArr);
     }
 }
