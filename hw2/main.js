@@ -36,16 +36,18 @@ let currentArr = streetImgArr;
 let currentIndex = 0;
 document.getElementById("currentImgId").innerHTML = `${currentIndex}`;
 
-displayTotalPic();
+let totalAmount = calculateTotalPic();
+document.getElementById("totalPic").innerHTML = `${totalAmount}`;
 
-function displayTotalPic() {
+function calculateTotalPic() {
     var i = 0;
     var count = 0;
     for(i = 0; i < totalArr.length; i++) {
         count += totalArr[i].length;
     }
-    document.getElementById("totalPic").innerHTML = `${count}`;
+    return count;
 }
+
 let displayBoxImg = document.getElementById("displayBoxImg"),
     prevButton = document.getElementById("prevButton"),
     nextButton = document.getElementById("nextButton"),
@@ -72,7 +74,29 @@ function renderPic(arr) {
             currentIndex = Number(this.id);
             setImg(currentIndex);
         };
+
+        var closeImg = document.createElement('span');
+        closeImg.className = 'close';
+        closeImg.innerHTML = "&times";
+        closeImg.id = i;
+        closeImg.onclick = function() {
+            ifDelete = confirm("Do you really want to delete this picture?");
+            if(ifDelete) {
+                // console.log(this.id, currentIndex);
+                totalAmount--;
+                document.getElementById("totalPic").innerHTML = `${totalAmount}`;
+                rowElement.innerHTML = '';
+                currentArr.splice(Number(this.id), 1);
+                if(currentIndex === Number(this.id)) {
+                    currentIndex = 0;
+                    console.log(currentIndex);
+                }
+                renderPic(currentArr);
+            }
+            else return;
+        };
         newPic.append(newPicImg);
+        newPic.append(closeImg);
     }
     setImg(currentIndex);
 }
@@ -117,15 +141,15 @@ function disableCheck() {
     }
 }
 
-function switchAlbum(album) {
+function switchAlbum(albumName) {
     currentAlbum.classList.remove("menuChecked");
     rowElement.innerHTML = '';
     var tempCur = currentIndex; //used when clicked the empty album, currentIndex shouldn't change
     currentIndex = 0;
-    if(album !== "empty") currentAlbum = document.getElementById(album);
-    if(album === 'street') renderPic(streetImgArr);
-    else if(album === 'food') renderPic(foodAndDrinkArr);
-    else if(album === 'nature') renderPic(natureArr);
+    if(albumName !== "empty") currentAlbum = document.getElementById(albumName);
+    if(albumName === 'street') renderPic(streetImgArr);
+    else if(albumName === 'food') renderPic(foodAndDrinkArr);
+    else if(albumName === 'nature') renderPic(natureArr);
     else {
         alert("This album is Empty!!");
         currentIndex = tempCur;
