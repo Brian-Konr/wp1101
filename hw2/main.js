@@ -82,15 +82,14 @@ function renderPic(arr) {
         closeImg.onclick = function() {
             ifDelete = confirm("Do you really want to delete this picture?");
             if(ifDelete) {
-                // console.log(this.id, currentIndex);
                 totalAmount--;
                 document.getElementById("totalPic").innerHTML = `${totalAmount}`;
                 rowElement.innerHTML = '';
                 currentArr.splice(Number(this.id), 1);
                 if(currentIndex === Number(this.id)) {
                     currentIndex = 0;
-                    console.log(currentIndex);
                 }
+                else currentIndex--;
                 renderPic(currentArr);
             }
             else return;
@@ -126,7 +125,6 @@ function setImg(index) {
 }
 
 function disableCheck() {
-    // console.log("currentIndex:", currentIndex, "currentArrLen:",currentArr.length)
     if(currentIndex === 0) {
         prevButton.classList.add("disabled");
         nextButton.classList.remove("disabled");
