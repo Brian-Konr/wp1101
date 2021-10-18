@@ -1,5 +1,6 @@
 var itemCount = 0,
-    completeCount = 0;
+    completeCount = 0,
+    completedItems = [];
 
 class TODO_ITEM {
     constructor(item_detail) {
