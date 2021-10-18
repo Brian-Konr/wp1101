@@ -82,6 +82,7 @@ function renderPic(arr) {
         closeImg.onclick = function() {
             ifDelete = confirm("Do you really want to delete this picture?");
             if(ifDelete) {
+                // console.log(this.id);
                 totalAmount--;
                 document.getElementById("totalPic").innerHTML = `${totalAmount}`;
                 rowElement.innerHTML = '';
@@ -89,7 +90,8 @@ function renderPic(arr) {
                 if(currentIndex === Number(this.id)) {
                     currentIndex = 0;
                 }
-                else currentIndex--;
+                // else if(currentIndex > 0) currentIndex--;
+                // console.log("currentIndex", currentIndex);
                 renderPic(currentArr);
             }
             else return;
