@@ -157,3 +157,5 @@ function switchAlbum(albumName) {
     }
     currentAlbum.classList.add("menuChecked")
 }
+
+//hello world
