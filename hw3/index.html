@@ -24,12 +24,12 @@
             <footer class="todo-app__footer" id="todo-footer">
                 <div class="todo-app__total">2 left</div>
                 <ul class="todo-app__view-buttons">
-                    <button>All</button>
-                    <button>Active</button>
-                    <button>Completed</button>
+                    <button onclick="switchList('all')">All</button>
+                    <button onclick="switchList('active')">Active</button>
+                    <button onclick="switchList('complete')">Completed</button>
                 </ul>
                 <div class="todo-app__clean">
-                    <button>Clear completed</button>
+                    <button onclick="clearComplete()">Clear completed</button>
                 </div>
             </footer>
         </div>

@@ -176,7 +176,9 @@ input[type='checkbox'] {
     border-radius: 5px;
     cursor: pointer;
 }
-
+.todo-app__view-buttons button:hover {
+    transform: scale(1.1);
+}
 .todo-app__view-buttons button:focus {
     outline: none;
 }
