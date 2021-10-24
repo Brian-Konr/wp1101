@@ -233,4 +233,5 @@ input[type='checkbox'] {
     max-width: 25px;
     max-height: 25px;
     right: 17.5px;
+    cursor: pointer;
 }
