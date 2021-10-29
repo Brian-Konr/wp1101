@@ -71,24 +71,20 @@ function App() {
   };
 
   const renderClearCompleted = () => {
-    if(currentComplete > 0) {
-      return <div className="todo-app__clean">
+    return <div className="todo-app__clean" style={{visibility: currentComplete > 0 ? 'visible': 'hidden'}}>
                 <button onClick = {clearComplete}>Clear completed</button>
             </div>
-    }
   }
   const renderFooter = () => {
-    if(todos.length > 0) {
-      return <footer className="todo-app__footer" id="todo-footer">
-                <div className="todo-app__total">{currentActive} left</div>
-                <ul className="todo-app__view-buttons">
-                    <button onClick={() => setCurrentTodos(todos)}>All</button>
-                    <button onClick={() => setCurrentTodos(todos.filter(ele => ele.checked === false))}>Active</button>
-                    <button onClick={() => setCurrentTodos(todos.filter(ele => ele.checked === true))}>Completed</button>
-                </ul>
-                {renderClearCompleted()}
-            </footer>
-    }
+    return <footer className="todo-app__footer" id="todo-footer" style={{ visibility: todos.length > 0 ? 'visible': 'hidden'}}>
+              <div className="todo-app__total">{currentActive} left</div>
+              <ul className="todo-app__view-buttons">
+                  <button onClick={() => setCurrentTodos(todos)}>All</button>
+                  <button onClick={() => setCurrentTodos(todos.filter(ele => ele.checked === false))}>Active</button>
+                  <button onClick={() => setCurrentTodos(todos.filter(ele => ele.checked === true))}>Completed</button>
+              </ul>
+              {renderClearCompleted()}
+          </footer>
   }
   const renderTodos = (curList) => {
     
@@ -99,7 +95,7 @@ function App() {
                 <input type="checkbox" id={item.id} checked={item.checked} onChange={handleCheck}/>
                 <label htmlFor={item.id} />
               </div>
-              <h1 className="todo-app__item-detail">{item.itemDetail}</h1>
+              <h1 className={"todo-app__item-detail" + (item.checked ? " complete":" none")}>{item.itemDetail}</h1>
               <img alt="delete icon" id={item.id} src= {x_png} className="todo-app__item-x" onClick={handleDelete}/>
             </li>
       )
