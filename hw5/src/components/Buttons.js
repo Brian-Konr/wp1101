@@ -6,7 +6,7 @@ function Buttons({currentValue, setCurrentValue, setExpression, expression, equa
     const operatorList = ["+", "-", "*", "/"];
     
     const [operator, setOperator] = useState(0); //0 means the current action is not operator, 1 otherwise.
-    function AC() {
+    function C() {
         setCurrentValue("0");
         setEqual(0);
         setExpression("");
@@ -49,7 +49,7 @@ function Buttons({currentValue, setCurrentValue, setExpression, expression, equa
 
     return(
         <>
-            <div className="btn light-gray" onClick = {() => AC()}>AC</div>
+            <div className="btn light-gray" onClick = {() => C()}>C</div>
             <div className="btn light-gray" onClick = {() => inputOperator("*1/100")}>%</div>
             <div className="btn light-gray" onClick = {() => inputOperator("*(-1)")}>+/-</div>
             <div className="btn orange" onClick = {() => inputOperator("/")}>&#247;</div>
@@ -70,7 +70,7 @@ function Buttons({currentValue, setCurrentValue, setExpression, expression, equa
             <div className="btn orange" onClick = {() => inputOperator("+")}>+</div>
 
             <div className="btn zero" onClick = {() => inputNum("0")}>0</div>
-            <div className="btn">.</div>
+            <div className="btn" onClick = {() => inputOperator("*0.1")}>.</div>
             <div className="btn orange" onClick = {() => calculate()}>=</div>
         </>
     )

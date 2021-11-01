@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import Buttons from './components/Buttons';
+import Buttons from '../components/Buttons';
 import "./styles.css";
 
 function App() {
 
-    const [currentValue, setCurrentValue] = useState("");
+    const [currentValue, setCurrentValue] = useState("0");
     const [result, setResult] = useState("");
     const [expression, setExpression] = useState("");
     const [equal, setEqual] = useState(0); // 0 is current, 1 is click equal
