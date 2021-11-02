@@ -25,6 +25,7 @@ export default function Modal({restartGame, backToHome, win}){
                 <div className="modalResult">{win? winText : loseText}</div>
                 <div className="modalBtnWrapper">
                     <div className="modalBtn">{win? btnWinText:btnLoseText}</div>
+                    <div className="modalBtn">Back to Home</div>
                 </div>
             </div>
         </div>
