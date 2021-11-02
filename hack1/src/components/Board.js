@@ -96,8 +96,7 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
 
     return(
         <div className = 'boardPage' >
-            <div className = 'boardWrapper' >
-                <h1>This is the board Page!</h1>  {/* This line of code is just for testing. Please delete it if you finish this function. */}
+            <div className = 'boardWrapper' >  {/* This line of code is just for testing. Please delete it if you finish this function. */}
                 
                 {/* -- TODO 3-1 -- */}
                 <div className="boardContainer">
