@@ -22,11 +22,6 @@ export const revealed = (board, x, y, newNonMinesCount, setBoard) => {
     }
     if(!board[x][y].revealed && !board[x][y].flagged) {
       let newArr = Array.from(board);
-      newArr.map(row => {
-        row.map(cell => {
-          cell.revealed = true;
-        })
-      })
       setBoard(newArr);
       return;
     }
