@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [hasStarted, setHasStarted] = useState(false);
+  const [hasWon, setHasWon] = useState(false);
+  const [number, setNumber] = useState('');
+  const [status, setStatus] = useState('');
+
+  const handleGuess = () => {
+    console.log("handleGuess");
+  }
+  const startMenu = <div>
+    <button onClick={() => console.log("hello")}>start game</button>
+  </div>
+
+  const gameMode = <>
+    <p>Guess a number between 1 to 100</p>
+    <input></input>
+    <button onClick={handleGuess} disabled={!number}>guess!</button>
+    <p>{status}</p>
+  </>
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {startMenu}
+      {gameMode}
     </div>
   );
 }

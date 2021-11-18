@@ -31,17 +31,16 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
     // Creating a board
     const freshBoard = () => {
         {/* -- TODO 3-1 -- */}
-        let temp = createBoard(boardSize, mineNum);
-        setBoard(temp.board);
-        setMineLocations(temp.mineLocations);
         {/* Useful Hint: createBoard(...) */}
+        
     }
-    console.log(board, mineLocations);
+
     const restartGame = () => {
         {/* -- TODO 5-2 -- */}
         {/* Useful Hint: freshBoard() */}
         
     }
+
     // On Right Click / Flag Cell
     const updateFlag = (e, x, y) => {
         // To not have a dropdown on right click
@@ -51,18 +50,6 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         {/* Useful Hint: A cell is going to be flagged. 'x' and 'y' are the xy-coordinate of the cell. */}
         {/* Reminder: If the cell is already flagged, you should unflagged it. Also remember to update the board and the remainFlagNum. */}
         {/* Reminder: The cell can be flagged only when it is not revealed. */}
-        if(!board[x][y].revealed && board[x][y].value !== '💣') {
-            if(board[x][y].flagged) setRemainFlagNum(prev => prev - 1);
-            else setRemainFlagNum(prev => prev + 1);
-            let newArr = Array.from(board);
-            newArr[x][y].flagged = !newArr[x][y].flagged;
-            setBoard(newArr);
-            setNonMineCount(prev => prev + 1);
-        }
-        else {
-            console.log("bomb");
-            revealed(board, x, y, nonMineCount, setBoard);
-        }
         
     };
 
@@ -71,45 +58,15 @@ const Board = ({ boardSize, mineNum, backToHome }) => {
         {/* Reveal the cell */}
         {/* Useful Hint: The function in reveal.js may be useful. You should consider if the cell you want to reveal is a location of mines or not. */}
         {/* Reminder: Also remember to handle the condition that after you reveal this cell then you win the game. */}
-        if(board[x][y].value !== '💣') {
-            if(nonMineCount + 1 + mineNum === (boardSize*boardSize)) {
-                setNonMineCount(prev => prev + 1);
-                setWin(true);
-                console.log("win");
-            }
-            else { //normal reveal
-                setNonMineCount(prev => prev + 1);
-                let newArr = Array.from(board);
-                newArr[x][y].revealed = true;
-                setBoard(newArr);
-            }
-        }
-        else { //game over
-            let newArr = Array.from(board);
-            newArr.map(row => {
-                row.map(cell => {
-                if(cell.value === '💣') cell.revealed = true;
-                })
-            })
-            setBoard(newArr);
-            return;
-        }
+        
     };
 
     return(
         <div className = 'boardPage' >
-            <div className = 'boardWrapper' >  {/* This line of code is just for testing. Please delete it if you finish this function. */}
-                
-                {/* -- TODO 3-1 -- */}
-                <div className="boardContainer">
-                    {board.map(row => (
-                        <div id = {`row${row[0].x}`} style = {{display: 'flex'}}>
-                            {row.map(cell => (
-                                <Cell rowIdx = {cell.x} colIdx = {cell.y} detail = {cell} updateFlag = {updateFlag} revealCell = {revealCell}/>
-                            ))}
-                        </div>
-                    ))}
-                </div>
+            <div className = 'boardWrapper' >
+            <h1>This is the board Page!</h1>  {/* This line of code is just for testing. Please delete it if you finish this function. */}
+            
+            {/* -- TODO 3-1 -- */}
             {/* Useful Hint: The board is composed of BOARDSIZE*BOARDSIZE of Cell (2-dimention). So, nested 'map' is needed to implement the board.  */}
             {/* Reminder: Remember to use the component <Cell> and <Dashboard>. See Cell.js and Dashboard.js for detailed information. */}
             
