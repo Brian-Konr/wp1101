@@ -1,7 +1,7 @@
 ## Run the server
 
-### `Yarn server`
+### `yarn server`
 
 ## Run the website
 
-### `Yarn start`
+### `yarn start`
