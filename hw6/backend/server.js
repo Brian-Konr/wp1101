@@ -1,10 +1,21 @@
-const http = require('http');
-const PORT = process.env.PORT || 4000;
-const server = http.createServer(function(req, res) {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World!');
-});
+import express from 'express';
+import cors from 'cors';
+import guessRoute from './routes/guess'
 
-server.listen(PORT, function() {
-    console.log(`Server listening on: http://localhost:${PORT}`);
+const app = express();
+
+// init middleware
+app.use(cors()); 
+
+app.get('/', function(req, res) {
+    res.send("Hello World!");
+})
+// define routers
+app.use('/api', guessRoute);
+
+// define server
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, function(err) {
+    if(err) console.log("Error in server setup")
+    else console.log(`Server listening on Port ${PORT}`);
 });
