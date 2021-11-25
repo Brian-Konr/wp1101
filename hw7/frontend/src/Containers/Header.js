@@ -16,15 +16,15 @@ const Wrapper = styled.section`
 `;
 
 const Header = () => {
-  const { addRegularMessage } = useScoreCard();
+  const { addClearMessage } = useScoreCard();
 
   const handleClear = async () => {
     const {
       data: { message },
     } = await axios.delete('/api/clear-db');
-    addRegularMessage(message);
+    addClearMessage(message);
   };
-
+  
   return (
     <Wrapper>
       <Typography variant="h2">ScoreCard DB</Typography>

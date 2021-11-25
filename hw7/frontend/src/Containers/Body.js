@@ -75,9 +75,13 @@ const Body = () => {
         queryString,
       },
     });
-
-    if (!messages) addErrorMessage(message);
-    else addRegularMessage(...messages);
+    if(!messages) addErrorMessage(message);
+    else {
+      let printData;
+      if(queryType === 'name') printData = messages.map((record) => `${record.name} => ${record.subject}: ${record.score}`);
+      else printData = messages.map((record) => `${record.subject} => ${record.name}: ${record.score}`)
+      addRegularMessage(printData);
+    }
   };
 
   return (
