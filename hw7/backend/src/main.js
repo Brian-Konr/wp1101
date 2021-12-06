@@ -12,6 +12,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors()); 
 app.use('/api', mainRoute);
+
+
 app.get('/', function(_, res) {
     res.send("Hello hw7");
 })
