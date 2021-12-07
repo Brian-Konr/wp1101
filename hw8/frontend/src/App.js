@@ -3,10 +3,9 @@ import { useState, useEffect, useRef } from 'react';
 import useChat from './useChat';
 import { Button, Input, Tag, message } from 'antd'
 
-function App() {
+function App({username}) {
   // define states and methods
   const { status, messages, sendMessage, clearMessages } = useChat();
-  const [username, setUsername] = useState('');
   const bodyRef = useRef(null);
   const [body, setBody] = useState(''); // text body
 
@@ -38,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-title">
-        <h1>Simple Chat</h1>
+        <h1>{`${username}'s Chat`}</h1>
         <Button type="primary" danger onClick = {clearMessages}>
           Clear
         </Button>
@@ -57,15 +56,6 @@ function App() {
           ))
         )}
       </div>
-      <Input
-        placeholder="Username"
-        value = {username}
-        onChange = {(e) => setUsername(e.target.value)}
-        onKeyDown = {(e) => {
-          if(e.key === 'Enter') bodyRef.current.focus();
-        }}
-        style={{ marginBottom: 10 }}
-      ></Input>
       <Input.Search
         enterButton="Send"
         placeholder="Type a message here..."
@@ -74,8 +64,8 @@ function App() {
         onChange = {(e) => setBody(e.target.value)}
         // when 'Send', call sendMessage()
         onSearch = {(msg) => {
-          if(!msg || !username) {
-            displayStatus({type: 'error', msg: 'Username or message body cannot be empty!'});
+          if(!msg) {
+            displayStatus({type: 'error', msg: 'message body cannot be empty!'});
             return;
           }
           sendMessage({name: username, body: msg});
