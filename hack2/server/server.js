@@ -26,9 +26,9 @@ mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, () => {
-  // if(process.env.mode === 'EXAM') {
-  //   dataInit();
-  // }
+  if(process.env.mode === 'EXAM') {
+    dataInit();
+  }
   console.log("connect db and init data successfully!");
 });
 

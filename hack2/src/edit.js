@@ -22,12 +22,13 @@ function Edit(props) {
         trimTitle,
         trimContent,
         timestamp
-      })
-      console.log(res.data);
+      });
+      if(res.data.message === "success") {
+        setTimeout(() => {
+          props.navigate(-1);
+        }, 300)
+      }
     }
-    setTimeout(() => {
-      props.navigate(-1);
-    }, 300)
   }
 
   return (

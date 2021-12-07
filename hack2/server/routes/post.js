@@ -56,7 +56,8 @@ router.post('/newPost', async (req, res) => {
         })
     } catch(error) {
         res.status(403).json({
-            message: "error"
+            message: "error",
+            post: null
         })
     }
 })
