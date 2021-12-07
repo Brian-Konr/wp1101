@@ -45,8 +45,8 @@ router.post('/newPost', async (req, res) => {
     console.log(req.body);
     const newPost = new Post({
         postId: req.body.postId,
-        title: req.body.trimTitle,
-        content: req.body.trimContent,
+        title: req.body.title,
+        content: req.body.content,
         timestamp: req.body.timestamp
     })
     try {

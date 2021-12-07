@@ -18,16 +18,14 @@ function Edit(props) {
       let timestamp = new Date();
       let postId = uuidv4();
       let res = await instance.post('/newPost', {
-        postId,
-        trimTitle,
-        trimContent,
-        timestamp
+        postId: postId,
+        title: trimTitle,
+        content: trimContent,
+        timestamp: timestamp
       });
-      if(res.data.message === "success") {
-        setTimeout(() => {
-          props.navigate(-1);
-        }, 300)
-      }
+      setTimeout(() => {
+        props.navigate(-1);
+      }, 300)
     }
   }
 
