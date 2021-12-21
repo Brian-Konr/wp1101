@@ -1,0 +1,28 @@
+
+.signIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 500px;
+    margin: auto;
+}
+
+.signIn-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signIn-title h1 {
+    margin: 0;
+    margin-right: 20px;
+    font-size: 3em;
+}
+
+.signIn-input {
+    width: 40%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
