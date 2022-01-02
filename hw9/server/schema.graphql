@@ -1,0 +1,47 @@
+type Query {
+  users: [User!]!
+  messages(user: String!): [Message!]!
+}
+
+type Mutation {
+  findOrCreateUser(user: String!): User!
+  createMessage(data: CreateMessageInput!): Message!
+  clearMessage(user: String): [Message]
+}
+
+type Subscription {
+  message: MessageSubscriptionPayload!
+  clean: CleanSubscriptionPayload!
+}
+
+type Message {
+  sendBy: String
+  sendTo: String
+  body: String
+}
+
+type User {
+  name: String
+  message: [Message!]!
+}
+
+input CreateMessageInput {
+  sendBy: String!
+  sendTo: String!
+  body: String!
+}
+
+enum MutationType {
+  CREATED
+  CLEARED
+}
+
+type MessageSubscriptionPayload {
+  mutation: MutationType!
+  data: Message
+}
+
+type CleanSubscriptionPayload {
+  mutation: MutationType!
+  data: [Message]
+}
