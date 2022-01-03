@@ -237,10 +237,10 @@ function App() {
     return (
       <div className='App'>
         <div className='App-title'>
-          <h1>Simple Chat Box App</h1>
+          <h1>Welcome to Simple Chat Room</h1>
         </div>
         <div className='App-title'>
-          <h2>Who are you...</h2>
+          <h2>Please enter your name</h2>
         </div>
         <Input
           placeholder="Tyep user name here..."
@@ -253,7 +253,7 @@ function App() {
           }}
         ></Input>
         <div className='App-title'>
-          <h2>Want to chat with...</h2>
+          <h2>Who do you want to chat with?</h2>
         </div>
         <Input.Search
           rows={4}
