@@ -69,7 +69,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+# .env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)
@@ -141,3 +141,6 @@ ehthumbs.db
 .Spotlight-V100
 .Trashes
 *.swp
+
+# modern-graphql-tutorial
+modern-graphql-tutorial/
