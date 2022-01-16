@@ -1,0 +1,39 @@
+.inputTitle {
+    color: #1c496e;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 8px;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+.ant-card {
+    text-align:left;
+}
+.ant-card-body {
+    padding: 1.5vw;
+}
+#inputcard > .ant-input {
+    border-radius: 8px;
+}
+p {
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+#top-describe {
+    margin-top: -10px;
+}
+.ant-card-bordered {
+    border:0px;
+}
+.custom-card {
+    margin-left: 1vw;
+    margin-top: 1vw;
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 0, 10 ,10, 16;
+    background-color: #ffffff;
+}

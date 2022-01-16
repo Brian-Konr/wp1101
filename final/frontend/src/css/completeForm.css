@@ -1,0 +1,30 @@
+.answer-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    width: 38vw;
+    position: relative;
+    min-height: 95vh;
+    padding: 0.5vw;
+    background-color: #e2c5ce75;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2px 2px 6px 4px rgba(151, 137, 145, 0.432);
+}
+.ind-item {
+    font-size: 16px;
+    border-radius: 16px;
+    min-width: 28vw;
+}
+#button-form {
+    text-align: center;
+}
+#ind-button {
+    margin-top: 1.5vw;
+    margin-bottom: -2vw;
+    border-color: #FB8CB3;
+    color: #fff;
+    background-color: #FB8CB3;
+    border-radius: 16px;
+    position: relative;
+}

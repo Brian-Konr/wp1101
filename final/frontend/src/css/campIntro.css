@@ -1,0 +1,30 @@
+.enterCamp-title {
+    margin: auto;
+    position: relative;
+    max-width: 15%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+#home-button #switch-button {
+    flex: 1;
+}
+#home-button {
+    margin-top: 2vw;
+    margin-right: 5px;
+    text-align: center;
+    border-color: #FB8CB3;
+    color: #FB8CB3;
+    background-color: #fff;
+    border-radius: 20px;
+}
+#switch-button {
+    margin-top: 2vw;
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 20px;
+    border-color: #FB8CB3;
+    color: #fff;
+    background-color: #FB8CB3;
+}

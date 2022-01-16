@@ -1,0 +1,107 @@
+.headnav {
+    position: fixed;
+    z-index: 14;
+    width: 100%;
+    background-color: #FB8CB3;
+}
+.headnav_lock {
+    position: fixed;
+    z-index: 14;
+    width: 100%;
+    background-color: #5CB7FF;
+}
+
+.navItem-signed {
+    display: inline-block;
+    font-size: 1.1em;
+    color: #fff;
+    text-shadow: 0 0 1.5px rgb(255, 255, 255);
+}
+.bar-grid {
+    display: grid;
+    grid-template-columns: minmax(10px,1fr) minmax(10px,1fr) minmax(50px,3fr) minmax(100px,10fr) minmax(10px,1fr) minmax(10px,1fr);
+    grid-column-gap: 1px;
+}
+.search-input .ant-input {
+    font-size: 14px important!
+}
+.ant-menu > .ant-menu-item:hover,
+.ant-menu > .ant-menu-submenu:hover,
+.ant-menu > .ant-menu-item-active,
+.ant-menu> .ant-menu-submenu-active,
+.ant-menu > .ant-menu-item-open,
+.ant-menu> .ant-menu-submenu-open,
+.ant-menu > .ant-menu-item-selected,
+.ant-menu > .ant-menu-submenu-selected {
+  color: rgb(255, 255, 255);
+}
+
+.ant-menu-item a:hover {
+     color: #fff !important;
+     border-bottom: none;
+}
+.ant-menu-submenu-arrow {
+    color: white;
+    border-bottom: none;
+}
+.ant-menu-item-selected {
+    color: white !important;
+    border-bottom: none;
+}
+.ant-menu-item-active {
+    background-color: rgba(255, 255, 255, 0) !important;
+    border-bottom: none;
+}
+.ant-menu-item-selected::selection,
+.ant-menu-item-active::selection {
+    background: #fff;
+    border-bottom: none;
+}
+
+.ant-menu,.ant-menu-sub,.ant-menu-inline{
+  color: white;
+  background-color: #ffffff00 !important;
+  border-bottom: none;
+}
+
+.ant-menu-submenu > .ant-menu {
+  background-color: rgb(245, 149, 197) !important;
+  border-bottom: none;
+}
+.ant-menu-submenu-title{
+  color: rgb(255, 255, 255) !important;
+  border-bottom: none;
+}
+
+.ant-menu-inline {
+  border: none;
+  border-bottom: none;
+}
+.ant-menu-item a {
+  color: rgb(255, 255, 255) !important;
+  border-bottom: none;
+}
+
+.ant-menu-item a:hover {
+  color: #fcfcfc !important;
+  border-bottom: none;
+}
+
+.ant-menu-submenu-arrow {
+  color: rgb(89, 235, 32);
+} 
+.ant-menu-submenu-active {
+    background-color: rgba(255, 255, 255, 0.247) !important;
+    color: #181010 !important;
+    border-bottom: none;
+}
+
+.ant-menu-item-selected {
+    border-bottom: none;
+    background-color: rgba(90, 101, 104, 0) !important;
+}
+.ant-menu-item-active {
+    border-bottom: none;
+    background-color: rgba(255, 255, 255, 0.247) !important;
+    color: #fcfcfc !important;
+}
