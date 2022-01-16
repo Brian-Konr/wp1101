@@ -40,18 +40,10 @@ First, we need to clone this repo. After this, `cd` to the repo directory, then 
     (using pip3 if use have python2 and python3 on your system, otherwise, use pip)
 3. Set up environment files
 
-    ```console
-    # use the following command when you don't have the env files provided by us
-    # you should change the value with your own s3
-    cp .env.dev.defaults .env.dev
+    We have given the required env files named .env.dev.ta.defaults in the wp1101/private repo please don't leak the secret key. You could either copy and paste the `.env.dev.ta.defaults` content to `.env.dev`, or use the following commands by first adding the .env.dev.ta.defaults to the backend/ directory
+    `cp .env.dev.ta.defaults .env.dev`
 
-    # Or you having the environment files provied by us
-    # We will give the required env files named .env.dev.ta.defaults
-    # you could copy paste the .env.dev.ta.defaults content to .env.dev or use the following commands by first adding the .env.dev.ta.defaults to the backend/ directory
-    cp .env.dev.ta.defaults .env.dev
-    ```
-
-    Explanations and precautions for the .env.dev
+    *Explanations and Precautions for the .env.dev*
     - you could change the secret key, we are using another key in production
     - the Email is one of our team member's own Email, and please don't use it for other purposes
     - we've use a different s3 bucket for testing, so it's encouraged to contact us after testing so that we could close the service and save some unnecessary costs.
@@ -62,6 +54,7 @@ First, we need to clone this repo. After this, `cd` to the repo directory, then 
 
     python3 manage.py collectstatic --no-input --clear
     ```
+    (Use python instead if python3 is getting error)
     - Set up sqlite3 for local test to reduce opportunity of causing errors, we use postgresql in production
     - after this two command, a db.sqlite3 file will create at backend/, and the static files will store at s3
 
@@ -75,6 +68,7 @@ First, we need to clone this repo. After this, `cd` to the repo directory, then 
     ``` console
         python3 manage.py runserver
     ```
+    (Use python instead if python3 is getting error)
     Ensure that the server run at port 8000
     
     For admin page: `localhost:8000/admin` (You could get, create, update, delete data in the admin page)

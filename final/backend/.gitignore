@@ -98,11 +98,11 @@ celerybeat-schedule.*
 *.sage.py
 
 # Environments
-env.dev.ta.defaults
+# env.dev.ta.defaults
 .env
 .env.dev
 .env.prod
-.env.dev.ta.defaults
+# .env.dev.ta.defaults
 .env.prod.proxy-companion
 .venv
 env/
