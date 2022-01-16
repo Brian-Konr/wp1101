@@ -1,4 +1,4 @@
-# Camping-Helper
+# Group 14 - Camping-Helper
 Camping-Helper provides activity organizers, especially college students the ability to create an elegant display page on the platform for their own activities, summer camps, and more. Besides, people interested in activities on the platform can also submit their registration information right at the website. We believe through Camping-Helper, both activity organizers and participants can host or join activities in an easy, fast, and convenient way.
 
 ## Motivation
@@ -157,7 +157,7 @@ Only listing the main package, otherwise it'll be too long
 資管二 B09705024 劉智心
 > [Alison Liu](https://github.com/Cyalisonliu), Frontend / User Interface / User Experience
 
-## Deploy Link
+## Deployment Link
 [Camping-Helper](https://campinghelper.dodofk.xyz/)
 
 *Thanks for using Camping-Helper, a convenient platform for displaying your activities.*
